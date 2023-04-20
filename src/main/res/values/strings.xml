@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">LEARN</string>
+    <string name="gram">gram</string>
+    <string name="miligram">miligram</string>
+    <string name="mikrogram">mikrogram</string>
+    <string name="unifiedunit">international unit</string>
 </resources>
