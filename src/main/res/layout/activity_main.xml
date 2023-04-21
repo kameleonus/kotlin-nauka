@@ -4,8 +4,10 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <com.github.florent37.materialviewpager.MaterialViewPager
+        android:id="@+id/material_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:viewpager_animatedHeaderImage="true"
         app:viewpager_color="@color/black"
         app:viewpager_displayToolbarWhenSwipe="true"
         app:viewpager_enableToolbarElevation="true"

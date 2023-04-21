@@ -17,7 +17,7 @@ data class FoodIngredient(
    private val dailyMale: String,
    private val dailyFem: String,
    private val unit:IntakeDoseUnit,
-   private val imageName:String)
+   private val imgName:String)
 {
     val intake
         get() = """${"\u2642"} $dailyMale ${unit.getLocalName()}
@@ -25,7 +25,7 @@ data class FoodIngredient(
     val drawable:Drawable?
         get(){
             val appContext = App.appContext
-           val id= appContext.resources.getIdentifier(imageName,DRAWABLE_TYPE_DEF,appContext.packageName)
+            val id= appContext.resources.getIdentifier(imgName,DRAWABLE_TYPE_DEF,appContext.packageName)
             return ResourcesCompat.getDrawable(appContext.resources,id,null)
         }
     companion object{
