@@ -2,9 +2,9 @@ package com.example.learn
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentStatePagerAdapter
 import com.example.learn.model.FoodIngredient
+import com.example.learn.recycler.RecyclerViewFragment
 import com.github.florent37.materialviewpager.header.HeaderDesign
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
         {
             override fun getCount() = ingredientArray.size
-            override fun getItem(position: Int) = Fragment()
+            override fun getItem(position: Int) = RecyclerViewFragment.newInstance(ingredientArray[position])
             override fun getPageTitle(position: Int) = ingredientArray[position].name
         }
 

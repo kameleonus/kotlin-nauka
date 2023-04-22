@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable
 import androidx.core.content.res.ResourcesCompat
 import com.example.learn.App
 import com.example.learn.R
+import java.io.Serializable
 
 /**
  * Model danych dla składnika pokarnomwego
@@ -17,7 +18,7 @@ data class FoodIngredient(
    private val dailyMale: String,
    private val dailyFem: String,
    private val unit:IntakeDoseUnit,
-   private val imgName:String)
+   private val imgName:String): Serializable
 {
     val intake
         get() = """${"\u2642"} $dailyMale ${unit.getLocalName()}
@@ -46,7 +47,10 @@ enum class IntakeDoseUnit (){
     }, IU() {
         override fun getLocalName()= App.appContext.getString(R.string.unifiedunit)
 
-    };
+    },UNKNOWN() {
+        override fun getLocalName() = App.appContext.getString(R.string.unidentified)
+
+    },;
 
     abstract fun getLocalName():String?
 }
